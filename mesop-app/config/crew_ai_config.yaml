@@ -1,0 +1,3 @@
+crew_ai:
+  agent_url: "http://crew-ai-agent-container:5000"
+  api_key: "your_api_key_here"  # Replace with a secure key
