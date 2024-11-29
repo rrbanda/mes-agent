@@ -3,7 +3,7 @@
 ## To build agent 
 
 ```
-podman build -t mesop-app:latest .
+podman build -t agent:latest .
 
 ```
 ## To run agent
@@ -11,10 +11,10 @@ podman build -t mesop-app:latest .
 ```
 podman run -d \
   --name agent \
-  --network crew-network \
+  --network mes-agent \
   --restart=always \
-  --env-file /home/rbanda/mes-agent/crew-ai-agent/.env \
-  crew-ai-agent:latest
+  --env-file /home/rbanda/mes-agent/agent/.env \
+  agent:latest
 ```
 
 ## To build App 
@@ -27,7 +27,7 @@ podman build -t mesop-app:latest .
 ```
 podman run -d \
   --name mesop-app-container \
-  --network crew-network \
+  --network mes-agent \
   -p 8080:8080 \
   mesop-app:latest
 
